@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:score_game/Core/utils/app_router.dart';
-import 'package:score_game/Core/utils/app_themes.dart';
+import 'package:score_game/Core/theme/app_themes.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

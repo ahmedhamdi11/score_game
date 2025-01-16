@@ -2,7 +2,9 @@
 class AppAssets {
   AppAssets._();
   
-  static const String imagesBackground = "assets/images/background.svg";
+  static const String iconsMenu = "assets/icons/menu.svg";
+
+  static const String imagesBackground = "assets/images/background.png";
 
   static const String imagesGameCard1 = "assets/images/game_card_1.svg";
 
