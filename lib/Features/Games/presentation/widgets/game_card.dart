@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:score_game/Core/constants/constants.dart';
 import 'package:score_game/Core/theme/app_text_styles.dart';
 import 'package:score_game/Core/theme/colors.dart';
+import 'package:score_game/Core/utils/app_router.dart';
 import 'package:score_game/Core/utils/enums.dart';
 import 'package:score_game/Features/Games/data/models/game_card_model.dart';
 
@@ -15,7 +16,7 @@ class GameCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: GestureDetector(
-        onTap: () => _onCardPressed(),
+        onTap: () => _onCardPressed(context),
         child: SizedBox(
           width: double.infinity,
           height: 146,
@@ -103,10 +104,10 @@ class GameCard extends StatelessWidget {
     }
   }
 
-  void _onCardPressed() {
+  void _onCardPressed(BuildContext context) {
     switch (game.gameType) {
       case GameType.trix:
-        // TODO: Handle pressing on the trix game card
+        Navigator.pushNamed(context, AppRouter.trixPlayersView);
         break;
       case GameType.tarneeb:
         // TODO: Handle pressing on the tarneeb game card
