@@ -98,9 +98,17 @@ abstract class AppColors {
     ],
   );
 
-  static const redGradient = LinearGradient(
+  static const redLinearGradient = LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
+    colors: [
+      Color(0xffCB2A2A),
+      Color(0xff7D0000),
+    ],
+  );
+
+  static const redRadialGradient = RadialGradient(
+    radius: 0.6,
     colors: [
       Color(0xffCB2A2A),
       Color(0xff7D0000),
