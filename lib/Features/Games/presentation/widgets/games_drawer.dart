@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:score_game/Core/theme/colors.dart';
 import 'package:score_game/Core/utils/app_assets.dart';
+import 'package:score_game/Core/utils/app_router.dart';
 import 'package:score_game/Core/widgets/default_list_tile.dart';
 
 class GamesDrawer extends StatelessWidget {
@@ -45,7 +46,10 @@ class GamesDrawer extends StatelessWidget {
                     children: [
                       // trix history
                       DefaultListTile(
-                        onPressed: () {},
+                        onPressed: () => Navigator.pushNamed(
+                          context,
+                          AppRouter.gameHistoryView,
+                        ),
                         title: 'سجل تريكس',
                       ),
 

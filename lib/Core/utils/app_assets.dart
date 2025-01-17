@@ -2,6 +2,8 @@
 class AppAssets {
   AppAssets._();
   
+  static const String iconsBackArrow = "assets/icons/back-arrow.svg";
+
   static const String iconsMenu = "assets/icons/menu.svg";
 
   static const String imagesBackground = "assets/images/background.png";

@@ -8,6 +8,22 @@ abstract class AppColors {
   static const secondary_400 = Color(0xff333333);
   static const red_400 = Color(0xff970202);
 
+  /// shadows
+  static textShadows([Color? color1, Color? color2]) => [
+        BoxShadow(
+          offset: const Offset(-2, -1.5),
+          blurRadius: 0,
+          spreadRadius: 0,
+          color: color1 ?? AppColors.red_400,
+        ),
+        BoxShadow(
+          offset: const Offset(0, 4),
+          blurRadius: 0,
+          spreadRadius: 0,
+          color: color2 ?? AppColors.black.withOpacity(0.2),
+        ),
+      ];
+
   /// gradients
   static const radialGradient = RadialGradient(
     radius: 0.6,
