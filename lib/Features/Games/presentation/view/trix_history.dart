@@ -6,8 +6,8 @@ import 'package:score_game/Core/widgets/default_back_button.dart';
 import 'package:score_game/Core/widgets/default_background.dart';
 import 'package:score_game/Features/Games/presentation/widgets/game_history_view_widgets/game_history_body.dart';
 
-class GameHistoryView extends StatelessWidget {
-  const GameHistoryView({super.key});
+class TrixHistoryView extends StatelessWidget {
+  const TrixHistoryView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class GameHistoryView extends StatelessWidget {
   AppBar _buildAppBar() {
     return AppBar(
       title: Text(
-        'إختار لعبتك',
+        'تريكس',
         style: AppTextStyles.bold_36.copyWith(
           shadows: AppColors.textShadows(),
         ),

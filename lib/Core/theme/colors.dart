@@ -7,6 +7,7 @@ abstract class AppColors {
   static const primary_300 = Color(0xffECBD10);
   static const secondary_400 = Color(0xff333333);
   static const red_400 = Color(0xff970202);
+  static const red_500 = Color(0xff7D0000);
   static const green_400 = Color(0xff02973E);
   static const blue_500 = Color(0xff005A7D);
 

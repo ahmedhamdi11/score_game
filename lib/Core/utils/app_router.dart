@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:score_game/Features/Games/presentation/view/game_history_view.dart';
+import 'package:score_game/Features/Games/presentation/view/trix_history.dart';
 import 'package:score_game/Features/Games/presentation/view/games_view.dart';
 
 abstract class AppRouter {
   /// routes names
-  static const gameHistoryView = '/gameHistoryView';
+  static const trixHistoryView = '/trixHistoryView';
 
   /// This function is responsible for generating routes based on the route settings.
   static Route? onGenerateRoute(RouteSettings settings) {
@@ -16,8 +16,8 @@ abstract class AppRouter {
         return MaterialPageRoute(builder: (_) => const GamesView());
 
       // game history view route
-      case gameHistoryView:
-        return MaterialPageRoute(builder: (_) => const GameHistoryView());
+      case trixHistoryView:
+        return MaterialPageRoute(builder: (_) => const TrixHistoryView());
 
       default:
         // TODO: If the route is not found, return the 404 screen.

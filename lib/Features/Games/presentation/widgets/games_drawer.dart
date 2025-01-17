@@ -48,7 +48,7 @@ class GamesDrawer extends StatelessWidget {
                       DefaultListTile(
                         onPressed: () => Navigator.pushNamed(
                           context,
-                          AppRouter.gameHistoryView,
+                          AppRouter.trixHistoryView,
                         ),
                         title: 'سجل تريكس',
                       ),
