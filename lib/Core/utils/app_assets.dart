@@ -6,10 +6,16 @@ class AppAssets {
 
   static const String imagesBackground = "assets/images/background.png";
 
-  static const String imagesGameCard1 = "assets/images/game_card_1.svg";
+  static const String imagesBlootGameImage = "assets/images/bloot_game_image.png";
 
-  static const String imagesGameCard2 = "assets/images/game_card_2.svg";
+  static const String imagesGameCardBlue = "assets/images/game_card_blue.png";
 
-  static const String imagesGameCard3 = "assets/images/game_card_3.svg";
+  static const String imagesGameCardGreen = "assets/images/game_card_green.png";
+
+  static const String imagesGameCardRed = "assets/images/game_card_red.png";
+
+  static const String imagesTarneebGameImage = "assets/images/tarneeb_game_image.png";
+
+  static const String imagesTrixGameImage = "assets/images/trix_game_image.png";
 }
 
