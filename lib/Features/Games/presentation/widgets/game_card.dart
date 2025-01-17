@@ -60,7 +60,7 @@ class GameCard extends StatelessWidget {
                           style: AppTextStyles.bold_36.copyWith(
                             fontFamily: kSTVFontFamily,
                             color: AppColors.white,
-                            shadows: AppColors.textShadows(),
+                            shadows: AppColors.textShadows(_TextBorderColor()),
                           ),
                         ),
                       ),
@@ -74,7 +74,9 @@ class GameCard extends StatelessWidget {
                             game.subTitle ?? "",
                             style: AppTextStyles.semiBold_12.copyWith(
                               color: AppColors.white,
-                              shadows: AppColors.textShadows(),
+                              shadows: AppColors.textShadows(
+                                _TextBorderColor(),
+                              ),
                             ),
                           ),
                         ),
@@ -88,6 +90,17 @@ class GameCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Color _TextBorderColor() {
+    switch (game.gameType) {
+      case GameType.trix:
+        return AppColors.red_400;
+      case GameType.tarneeb:
+        return AppColors.green_400;
+      case GameType.bloot:
+        return AppColors.blue_500;
+    }
   }
 
   void _onCardPressed() {
