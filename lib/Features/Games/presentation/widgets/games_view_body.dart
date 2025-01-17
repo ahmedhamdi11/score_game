@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:score_game/Core/constants/constants.dart';
 import 'package:score_game/Core/theme/app_text_styles.dart';
 import 'package:score_game/Core/theme/colors.dart';
 import 'package:score_game/Core/utils/app_assets.dart';
@@ -58,11 +59,12 @@ class _GamesViewBodyState extends State<GamesViewBody> {
       padding: const EdgeInsets.symmetric(horizontal: 14),
       child: Column(
         children: [
-          const SizedBox(height: 30),
+          const SizedBox(height: kTopPadding),
 
           // games list
           Expanded(
             child: ListView.builder(
+              padding: const EdgeInsets.only(top: 25),
               itemCount: availableGames.length,
               itemBuilder: (context, index) => GameCard(
                 game: availableGames[index],
@@ -72,9 +74,11 @@ class _GamesViewBodyState extends State<GamesViewBody> {
 
           // info button
           Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 40,
-              vertical: 60,
+            padding: const EdgeInsets.only(
+              left: 30,
+              right: 30,
+              top: 12,
+              bottom: 40,
             ),
             child: Align(
               alignment: AlignmentDirectional.centerEnd,
