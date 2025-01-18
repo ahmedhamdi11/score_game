@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:score_game/Core/constants/constants.dart';
 import 'package:score_game/Core/theme/app_text_styles.dart';
 import 'package:score_game/Core/theme/colors.dart';
 import 'package:score_game/Core/widgets/default_back_button.dart';
@@ -18,7 +19,10 @@ class TrixPlayersView extends StatelessWidget {
           DefaultBackground(
             gradient: AppColors.redRadialGradient,
           ),
-          TrixPlayersBody(),
+          Padding(
+            padding: EdgeInsets.only(top: kTopPadding, left: 24, right: 24),
+            child: TrixPlayersBody(),
+          ),
         ],
       ),
     );

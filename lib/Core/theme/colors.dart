@@ -132,4 +132,12 @@ abstract class AppColors {
       Color(0xff005A7D),
     ],
   );
+
+  static RadialGradient whiteRadialGradient = RadialGradient(
+    colors: [
+      Colors.white,
+      Colors.white.withOpacity(0.5),
+      Colors.white.withOpacity(0),
+    ],
+  );
 }

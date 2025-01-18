@@ -10,6 +10,8 @@ class AppAssets {
 
   static const String imagesBlootGameImage = "assets/images/bloot_game_image.png";
 
+  static const String imagesCustomButtonShape = "assets/images/custom_button_shape.svg";
+
   static const String imagesGameCardBlue = "assets/images/game_card_blue.png";
 
   static const String imagesGameCardGreen = "assets/images/game_card_green.png";
