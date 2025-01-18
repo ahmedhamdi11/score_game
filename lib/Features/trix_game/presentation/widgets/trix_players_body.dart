@@ -30,8 +30,6 @@ class TrixPlayersBody extends StatelessWidget {
           ),
         ),
 
-        const SizedBox(height: 18),
-
         // continue button
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,

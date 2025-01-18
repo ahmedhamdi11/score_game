@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:score_game/Features/Games/presentation/view/trix_history.dart';
 import 'package:score_game/Features/Games/presentation/view/games_view.dart';
+import 'package:score_game/Features/trix_game/presentation/controller/trix_cubit.dart/trix_cubit.dart';
 import 'package:score_game/Features/trix_game/presentation/views/trix_players_view.dart';
 
 abstract class AppRouter {
@@ -23,7 +25,12 @@ abstract class AppRouter {
 
       // game history view route
       case trixPlayersView:
-        return MaterialPageRoute(builder: (_) => const TrixPlayersView());
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => TrixCubit(),
+            child: const TrixPlayersView(),
+          ),
+        );
 
       default:
         // TODO: If the route is not found, return the 404 screen.

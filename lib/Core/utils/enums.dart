@@ -3,3 +3,8 @@ enum GameType {
   tarneeb,
   bloot,
 }
+
+enum GamePlayersType {
+  team,
+  individual,
+}
