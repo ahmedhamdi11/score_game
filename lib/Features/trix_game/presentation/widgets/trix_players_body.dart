@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:score_game/Core/theme/colors.dart';
 import 'package:score_game/Core/utils/app_assets.dart';
 import 'package:score_game/Core/widgets/custom_shaped_button.dart';
+import 'package:score_game/Features/trix_game/presentation/widgets/players_list.dart';
 import 'package:score_game/Features/trix_game/presentation/widgets/toggle_buttons.dart';
 
 class TrixPlayersBody extends StatelessWidget {
@@ -22,9 +23,15 @@ class TrixPlayersBody extends StatelessWidget {
               color: AppColors.white,
               borderRadius: BorderRadius.circular(14),
             ),
-            child: Column(
+            child: const Column(
               children: [
+                // individual and team toggle buttons
                 TrixSingleMultiToggle(),
+
+                SizedBox(height: 20),
+
+                // players list
+                Expanded(child: PlayersList()),
               ],
             ),
           ),
