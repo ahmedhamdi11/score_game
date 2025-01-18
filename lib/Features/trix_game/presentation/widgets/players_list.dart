@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:score_game/Core/theme/app_text_styles.dart';
 import 'package:score_game/Core/theme/colors.dart';
+import 'package:score_game/Core/utils/app_assets.dart';
 import 'package:score_game/Core/utils/enums.dart';
 import 'package:score_game/Core/widgets/default_animated_switcher.dart';
 import 'package:score_game/Features/trix_game/presentation/controller/trix_cubit.dart/trix_cubit.dart';
@@ -75,10 +76,19 @@ class PlayersList extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           Expanded(
-            child: Text(
-              name,
-              textAlign: TextAlign.center,
-              style: AppTextStyles.regular_21,
+            child: Column(
+              children: [
+                Text(
+                  name,
+                  textAlign: TextAlign.center,
+                  style: AppTextStyles.regular_21,
+                ),
+                Image.asset(
+                  AppAssets.imagesCustomDivider,
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
+                ),
+              ],
             ),
           ),
         ],

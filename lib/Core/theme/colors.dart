@@ -62,7 +62,7 @@ abstract class AppColors {
           color: color1 ?? AppColors.red_400,
         ),
         BoxShadow(
-          offset: const Offset(0, 5),
+          offset: const Offset(3, 4),
           blurRadius: 0,
           spreadRadius: 0,
           color: color2 ?? AppColors.black.withOpacity(0.2),

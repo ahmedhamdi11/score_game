@@ -12,6 +12,8 @@ class AppAssets {
 
   static const String imagesCustomButtonShape = "assets/images/custom_button_shape.svg";
 
+  static const String imagesCustomDivider = "assets/images/custom_divider.png";
+
   static const String imagesGameCardBlue = "assets/images/game_card_blue.png";
 
   static const String imagesGameCardGreen = "assets/images/game_card_green.png";
