@@ -73,20 +73,20 @@ class _ToggleItem extends StatelessWidget {
         onTap: onTap,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
-          padding: const EdgeInsets.symmetric(
-            horizontal: 36,
-            vertical: 12,
-          ),
+          padding: const EdgeInsets.all(12),
           alignment: Alignment.center,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             gradient: isSelected ? AppColors.startPlayerGradient : null,
             border: Border.all(color: AppColors.white),
           ),
-          child: Text(
-            btnText,
-            style: AppTextStyles.bold_16.copyWith(
-              color: isSelected ? AppColors.white : AppColors.secondary_400,
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              btnText,
+              style: AppTextStyles.bold_16.copyWith(
+                color: isSelected ? AppColors.white : AppColors.secondary_400,
+              ),
             ),
           ),
         ),
