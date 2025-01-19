@@ -6,6 +6,8 @@ class AppAssets {
 
   static const String iconsMenu = "assets/icons/menu.svg";
 
+  static const String iconsPlayingCardHeart = "assets/icons/playing_card_heart.svg";
+
   static const String imagesBackground = "assets/images/background.png";
 
   static const String imagesBlootGameImage = "assets/images/bloot_game_image.png";

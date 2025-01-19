@@ -65,6 +65,10 @@ flutter:
       fonts:
         - asset: assets/fonts/Alexandria-VariableFont_wght.ttf
 
+    - family: DMSerifText-Regular
+      fonts:
+        - asset: assets/fonts/DMSerifText-Regular.ttf
+
 flutter_assets:
   assets_path:
     - assets/icons/

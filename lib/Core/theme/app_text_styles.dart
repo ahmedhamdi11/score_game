@@ -17,6 +17,12 @@ abstract class AppTextStyles {
     fontSize: 14,
   );
 
+  // font size 15
+  static const regular_15 = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 15,
+  );
+
   // font size 16
   static const bold_16 = TextStyle(
     fontWeight: FontWeight.w700,
@@ -37,6 +43,12 @@ abstract class AppTextStyles {
   static const bold_21 = TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: 21,
+  );
+
+  // font size 27
+  static const regular_27 = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 27,
   );
 
   // font size 28
