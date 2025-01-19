@@ -1,22 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:score_game/Core/theme/app_text_styles.dart';
 import 'package:score_game/Core/theme/colors.dart';
 import 'package:score_game/Core/utils/app_assets.dart';
+import 'package:score_game/Core/utils/enums.dart';
+import 'package:score_game/Features/trix_game/presentation/controller/trix_cubit.dart/trix_cubit.dart';
 
 class ChoosePlayersCircles extends StatelessWidget {
   const ChoosePlayersCircles({
     super.key,
-    required this.circleOne,
-    required this.circleTwo,
-    required this.circleThree,
-    required this.circleFour,
+    required this.playerOne,
+    required this.playerTwo,
+    required this.playerThree,
+    required this.playerFour,
   });
 
-  final String circleOne, circleTwo, circleThree, circleFour;
+  final String playerOne, playerTwo, playerThree, playerFour;
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<TrixCubit>();
+
     return Directionality(
       textDirection: TextDirection.rtl,
       child: FittedBox(
@@ -33,24 +38,44 @@ class ChoosePlayersCircles extends StatelessWidget {
                   // player one
                   Align(
                     alignment: AlignmentDirectional.topCenter,
-                    child: _PlayerNameCircle(content: circleOne),
+                    child: _PlayerNameCircle(
+                      team: cubit.state.selectedType == GamePlayersType.team
+                          ? "ف 1"
+                          : null,
+                      content: playerOne,
+                    ),
                   ),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // player four
-                      _PlayerNameCircle(content: circleFour),
+                      // player three
+                      _PlayerNameCircle(
+                        content: playerThree,
+                        team: cubit.state.selectedType == GamePlayersType.team
+                            ? "ف 2"
+                            : null,
+                      ),
 
-                      // player two
-                      _PlayerNameCircle(content: circleTwo),
+                      // player four
+                      _PlayerNameCircle(
+                        content: playerFour,
+                        team: cubit.state.selectedType == GamePlayersType.team
+                            ? "ف 2"
+                            : null,
+                      ),
                     ],
                   ),
 
-                  // player three
+                  // player two
                   Align(
                     alignment: AlignmentDirectional.bottomCenter,
-                    child: _PlayerNameCircle(content: circleThree),
+                    child: _PlayerNameCircle(
+                      content: playerTwo,
+                      team: cubit.state.selectedType == GamePlayersType.team
+                          ? "ف 1"
+                          : null,
+                    ),
                   ),
                 ],
               ),
@@ -65,9 +90,11 @@ class ChoosePlayersCircles extends StatelessWidget {
 class _PlayerNameCircle extends StatelessWidget {
   const _PlayerNameCircle({
     required this.content,
+    this.team,
   });
 
   final String content;
+  final String? team;
 
   @override
   Widget build(BuildContext context) {
@@ -81,11 +108,23 @@ class _PlayerNameCircle extends StatelessWidget {
       ),
       child: FittedBox(
         fit: BoxFit.scaleDown,
-        child: Text(
-          content,
-          style: AppTextStyles.semiBold_12.copyWith(
-            color: AppColors.white,
-          ),
+        child: Column(
+          children: [
+            if (team != null)
+              Text(
+                team!,
+                style: AppTextStyles.semiBold_12.copyWith(
+                  color: AppColors.white,
+                ),
+              ),
+            if (team != null) const SizedBox(height: 2),
+            Text(
+              content,
+              style: AppTextStyles.semiBold_12.copyWith(
+                color: AppColors.white,
+              ),
+            ),
+          ],
         ),
       ),
     );

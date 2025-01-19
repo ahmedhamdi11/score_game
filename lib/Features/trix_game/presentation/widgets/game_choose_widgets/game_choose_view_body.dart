@@ -21,10 +21,10 @@ class GameChooseViewBody extends StatelessWidget {
         // choose players circles
         const Expanded(
           child: ChoosePlayersCircles(
-            circleOne: 'محمد',
-            circleTwo: 'أحمد',
-            circleThree: 'محمود',
-            circleFour: 'عبدالله',
+            playerOne: 'محمد',
+            playerTwo: 'أحمد',
+            playerThree: 'محمود',
+            playerFour: 'عبدالله',
           ),
         ),
 
