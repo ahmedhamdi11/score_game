@@ -12,6 +12,10 @@ class AppAssets {
 
   static const String imagesBlootGameImage = "assets/images/bloot_game_image.png";
 
+  static const String imagesCurvedArrowDown = "assets/images/curved_arrow_down.svg";
+
+  static const String imagesCurvedArrowUp = "assets/images/curved_arrow_up.svg";
+
   static const String imagesCustomButtonShape = "assets/images/custom_button_shape.svg";
 
   static const String imagesCustomDivider = "assets/images/custom_divider.png";
