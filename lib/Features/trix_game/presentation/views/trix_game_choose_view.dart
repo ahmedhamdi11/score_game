@@ -18,6 +18,7 @@ class TrixGameChooseView extends StatelessWidget {
         children: [
           DefaultBackground(
             gradient: AppColors.redRadialGradient,
+            opacity: 0.9,
           ),
           Padding(
             padding: EdgeInsets.only(top: kTopPadding, left: 24, right: 24),

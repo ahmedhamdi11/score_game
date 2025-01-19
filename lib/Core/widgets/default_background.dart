@@ -6,9 +6,11 @@ class DefaultBackground extends StatelessWidget {
   const DefaultBackground({
     super.key,
     this.gradient,
+    this.opacity = 0.4,
   });
 
   final Gradient? gradient;
+  final double opacity;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class DefaultBackground extends StatelessWidget {
         gradient: gradient ?? AppColors.radialGradient,
       ),
       child: Opacity(
-        opacity: 0.4,
+        opacity: opacity,
         child: Image.asset(
           AppAssets.imagesBackground,
           fit: BoxFit.cover,
