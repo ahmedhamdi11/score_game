@@ -5,8 +5,8 @@ import 'package:score_game/Core/utils/app_assets.dart';
 import 'package:score_game/Core/utils/app_router.dart';
 import 'package:score_game/Core/widgets/custom_shaped_button.dart';
 import 'package:score_game/Features/trix_game/presentation/controller/trix_cubit.dart/trix_cubit.dart';
-import 'package:score_game/Features/trix_game/presentation/widgets/players_list.dart';
-import 'package:score_game/Features/trix_game/presentation/widgets/toggle_buttons.dart';
+import 'package:score_game/Features/trix_game/presentation/widgets/players_view_widgets/players_list.dart';
+import 'package:score_game/Features/trix_game/presentation/widgets/players_view_widgets/toggle_buttons.dart';
 
 class TrixPlayersBody extends StatelessWidget {
   const TrixPlayersBody({super.key});

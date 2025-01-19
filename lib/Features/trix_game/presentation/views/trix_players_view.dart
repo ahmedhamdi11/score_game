@@ -4,7 +4,7 @@ import 'package:score_game/Core/theme/app_text_styles.dart';
 import 'package:score_game/Core/theme/colors.dart';
 import 'package:score_game/Core/widgets/default_back_button.dart';
 import 'package:score_game/Core/widgets/default_background.dart';
-import 'package:score_game/Features/trix_game/presentation/widgets/trix_players_body.dart';
+import 'package:score_game/Features/trix_game/presentation/widgets/players_view_widgets/trix_players_body.dart';
 
 class TrixPlayersView extends StatelessWidget {
   const TrixPlayersView({super.key});
