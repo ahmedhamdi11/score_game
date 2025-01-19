@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:score_game/Core/theme/colors.dart';
 import 'package:score_game/Core/utils/app_assets.dart';
+import 'package:score_game/Core/utils/app_router.dart';
 import 'package:score_game/Core/widgets/custom_shaped_button.dart';
+import 'package:score_game/Features/trix_game/presentation/controller/trix_cubit.dart/trix_cubit.dart';
 import 'package:score_game/Features/trix_game/presentation/widgets/players_list.dart';
 import 'package:score_game/Features/trix_game/presentation/widgets/toggle_buttons.dart';
 
@@ -43,7 +46,10 @@ class TrixPlayersBody extends StatelessWidget {
           children: [
             Expanded(
               child: CustomShapedButton(
-                onTap: () {},
+                onTap: () => Navigator.of(context).pushNamed(
+                  AppRouter.trixGameChooseView,
+                  arguments: context.read<TrixCubit>(),
+                ),
                 btnText: 'استمرار',
               ),
             ),
