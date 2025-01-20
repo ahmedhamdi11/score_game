@@ -1,13 +1,20 @@
 import 'package:score_game/Core/utils/enums.dart';
 
 class TrixState {
-  GamePlayersType selectedType;
+  GamePlayersType playersType;
+  TrixGameType trixGameType;
 
   TrixState({
-    this.selectedType = GamePlayersType.individual,
+    this.playersType = GamePlayersType.individual,
+    this.trixGameType = TrixGameType.trix,
   });
 
-  TrixState copyWith({GamePlayersType? selectedType}) => TrixState(
-        selectedType: selectedType ?? this.selectedType,
+  TrixState copyWith({
+    GamePlayersType? selectedType,
+    TrixGameType? trixGameType,
+  }) =>
+      TrixState(
+        playersType: selectedType ?? this.playersType,
+        trixGameType: trixGameType ?? this.trixGameType,
       );
 }

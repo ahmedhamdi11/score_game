@@ -26,13 +26,14 @@ class TrixSingleMultiToggle extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: BlocSelector<TrixCubit, TrixState, GamePlayersType>(
-        selector: (state) => state.selectedType,
+        selector: (state) => state.playersType,
         builder: (context, state) {
           return Row(
             children: [
               Expanded(
                 child: _ToggleItem(
-                  onTap: () => cubit.setGameTypeToIndividual(),
+                  onTap: () =>
+                      cubit.toggleGamePlayersType(GamePlayersType.individual),
                   isSelected: state == GamePlayersType.individual,
                   btnText: 'فردي',
                 ),
@@ -40,7 +41,8 @@ class TrixSingleMultiToggle extends StatelessWidget {
               const SizedBox(width: 22),
               Expanded(
                 child: _ToggleItem(
-                  onTap: () => cubit.setGameTypeToTeam(),
+                  onTap: () =>
+                      cubit.toggleGamePlayersType(GamePlayersType.team),
                   isSelected: state == GamePlayersType.team,
                   btnText: 'فريق',
                 ),

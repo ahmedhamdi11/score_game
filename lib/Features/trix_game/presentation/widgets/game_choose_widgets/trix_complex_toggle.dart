@@ -1,31 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:score_game/Core/theme/app_text_styles.dart';
 import 'package:score_game/Core/theme/colors.dart';
+import 'package:score_game/Core/utils/enums.dart';
+import 'package:score_game/Features/trix_game/presentation/controller/trix_cubit.dart/trix_cubit.dart';
+import 'package:score_game/Features/trix_game/presentation/controller/trix_cubit.dart/trix_state.dart';
 
 class TrixComplexToggle extends StatelessWidget {
   const TrixComplexToggle({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<TrixCubit>();
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
-      child: Row(
-        children: [
-          Expanded(
-            child: _ButtonItem(
-              onPressed: () {},
-              btnText: 'تريكس',
-              isSelected: true,
-            ),
-          ),
-          Expanded(
-            child: _ButtonItem(
-              onPressed: () {},
-              btnText: 'تريكس',
-              isSelected: false,
-            ),
-          ),
-        ],
+      child: BlocSelector<TrixCubit, TrixState, TrixGameType>(
+        selector: (state) => state.trixGameType,
+        builder: (context, state) {
+          return Row(
+            children: [
+              Expanded(
+                child: _ButtonItem(
+                  onPressed: () =>
+                      cubit.toggleTrixAndComplex(TrixGameType.trix),
+                  btnText: 'تريكس',
+                  isSelected: state == TrixGameType.trix,
+                ),
+              ),
+              Expanded(
+                child: _ButtonItem(
+                  onPressed: () =>
+                      cubit.toggleTrixAndComplex(TrixGameType.complex),
+                  btnText: 'تريكس',
+                  isSelected: state == TrixGameType.complex,
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }

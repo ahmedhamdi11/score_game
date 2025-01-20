@@ -33,7 +33,7 @@ class PlayersList extends StatelessWidget {
 
   Widget _teamHeader(String title) {
     return BlocSelector<TrixCubit, TrixState, GamePlayersType>(
-      selector: (state) => state.selectedType,
+      selector: (state) => state.playersType,
       builder: (context, gameType) {
         return DefaultAnimatedSwitcher(
           transitionType: DefaultAnimatedSwitcherTransition.size,

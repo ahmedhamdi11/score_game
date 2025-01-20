@@ -39,7 +39,7 @@ class ChoosePlayersCircles extends StatelessWidget {
                   Align(
                     alignment: AlignmentDirectional.topCenter,
                     child: _PlayerNameCircle(
-                      team: cubit.state.selectedType == GamePlayersType.team
+                      team: cubit.state.playersType == GamePlayersType.team
                           ? "ف 1"
                           : null,
                       content: playerOne,
@@ -52,7 +52,7 @@ class ChoosePlayersCircles extends StatelessWidget {
                       // player three
                       _PlayerNameCircle(
                         content: playerThree,
-                        team: cubit.state.selectedType == GamePlayersType.team
+                        team: cubit.state.playersType == GamePlayersType.team
                             ? "ف 2"
                             : null,
                       ),
@@ -60,7 +60,7 @@ class ChoosePlayersCircles extends StatelessWidget {
                       // player four
                       _PlayerNameCircle(
                         content: playerFour,
-                        team: cubit.state.selectedType == GamePlayersType.team
+                        team: cubit.state.playersType == GamePlayersType.team
                             ? "ف 2"
                             : null,
                       ),
@@ -72,7 +72,7 @@ class ChoosePlayersCircles extends StatelessWidget {
                     alignment: AlignmentDirectional.bottomCenter,
                     child: _PlayerNameCircle(
                       content: playerTwo,
-                      team: cubit.state.selectedType == GamePlayersType.team
+                      team: cubit.state.playersType == GamePlayersType.team
                           ? "ف 1"
                           : null,
                     ),

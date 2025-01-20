@@ -5,11 +5,11 @@ import 'package:score_game/Features/trix_game/presentation/controller/trix_cubit
 class TrixCubit extends Cubit<TrixState> {
   TrixCubit() : super(TrixState());
 
-  void setGameTypeToIndividual() {
-    emit(state.copyWith(selectedType: GamePlayersType.individual));
+  void toggleTrixAndComplex(TrixGameType trixGameType) {
+    emit(state.copyWith(trixGameType: trixGameType));
   }
 
-  void setGameTypeToTeam() {
-    emit(state.copyWith(selectedType: GamePlayersType.team));
+  void toggleGamePlayersType(GamePlayersType selectedType) {
+    emit(state.copyWith(selectedType: selectedType));
   }
 }
