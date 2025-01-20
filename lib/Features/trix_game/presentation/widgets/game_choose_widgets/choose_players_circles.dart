@@ -6,6 +6,7 @@ import 'package:score_game/Core/theme/colors.dart';
 import 'package:score_game/Core/utils/app_assets.dart';
 import 'package:score_game/Core/utils/enums.dart';
 import 'package:score_game/Features/trix_game/presentation/controller/trix_cubit.dart/trix_cubit.dart';
+import 'package:score_game/Features/trix_game/presentation/controller/trix_cubit.dart/trix_state.dart';
 
 class ChoosePlayersCircles extends StatelessWidget {
   const ChoosePlayersCircles({
@@ -29,7 +30,7 @@ class ChoosePlayersCircles extends StatelessWidget {
         child: Stack(
           children: [
             // background circle
-            const _BackgroundCircleWithArrows(),
+            const _BackgroundCircleWithDabalatInfo(),
 
             Positioned.fill(
               child: Column(
@@ -131,8 +132,8 @@ class _PlayerNameCircle extends StatelessWidget {
   }
 }
 
-class _BackgroundCircleWithArrows extends StatelessWidget {
-  const _BackgroundCircleWithArrows();
+class _BackgroundCircleWithDabalatInfo extends StatelessWidget {
+  const _BackgroundCircleWithDabalatInfo();
 
   @override
   Widget build(BuildContext context) {
@@ -142,16 +143,28 @@ class _BackgroundCircleWithArrows extends StatelessWidget {
         clipBehavior: Clip.none,
         alignment: Alignment.topCenter,
         children: [
-          Container(
-            width: 260,
-            height: 260,
-            decoration: const ShapeDecoration(
-              shape: CircleBorder(
-                side: BorderSide(color: AppColors.primary_300),
-              ),
-              color: AppColors.red_100,
-            ),
+          // background circle with dabalat info
+          BlocSelector<TrixCubit, TrixState, TrixGameType>(
+            selector: (state) => state.trixGameType,
+            builder: (context, state) {
+              return Container(
+                width: 260,
+                height: 260,
+                padding: const EdgeInsets.all(50),
+                decoration: const ShapeDecoration(
+                  shape: CircleBorder(
+                    side: BorderSide(color: AppColors.primary_300),
+                  ),
+                  color: AppColors.red_100,
+                ),
+                child: state == TrixGameType.complex
+                    ? const DabalatInfoButton()
+                    : null,
+              );
+            },
           ),
+
+          // directional arrows
           PositionedDirectional(
             top: -5,
             end: -5,
@@ -168,6 +181,92 @@ class _BackgroundCircleWithArrows extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class DabalatInfoButton extends StatelessWidget {
+  const DabalatInfoButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: GestureDetector(
+        onTap: () {},
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // player one dabalat
+            _dabalatValue(cardNum: 'K'),
+
+            const SizedBox(height: 12),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // player three dabalat
+                _dabalatValue(cardNum: '2Q', cardSymbol: '♠️♦️️'),
+
+                const SizedBox(width: 14),
+
+                Container(
+                  width: 67,
+                  height: 67,
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.all(10),
+                  decoration: const ShapeDecoration(
+                    shape: CircleBorder(
+                      side: BorderSide(color: AppColors.primary_300),
+                    ),
+                  ),
+                  child: Text(
+                    'دبلات',
+                    style: AppTextStyles.semiBold_12.copyWith(
+                      color: AppColors.white,
+                    ),
+                  ),
+                ),
+
+                const SizedBox(width: 14),
+
+                // player four dabalat
+                _dabalatValue(cardNum: '2Q', cardSymbol: '♣️♥️️'),
+              ],
+            ),
+
+            const SizedBox(height: 14),
+
+            // player two dabalat
+            _dabalatValue(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _dabalatValue({
+    String? cardNum,
+    String? cardSymbol,
+  }) {
+    return Column(
+      children: [
+        Text(
+          cardNum ?? '.....',
+          style: AppTextStyles.regular_13.copyWith(
+            color: AppColors.white,
+          ),
+        ),
+        if (cardSymbol != null)
+          Text(
+            cardSymbol,
+            style: AppTextStyles.regular_13.copyWith(
+              color: AppColors.white,
+            ),
+          ),
+      ],
     );
   }
 }
