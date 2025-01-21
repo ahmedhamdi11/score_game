@@ -63,6 +63,12 @@ abstract class AppTextStyles {
     fontSize: 28,
   );
 
+  // font size 32
+  static const semiBold_32 = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 32,
+  );
+
   // font size 36
   static const bold_36 = TextStyle(
     fontWeight: FontWeight.w700,

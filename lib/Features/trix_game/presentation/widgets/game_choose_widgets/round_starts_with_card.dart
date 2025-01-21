@@ -9,12 +9,16 @@ class RoundStartsWithCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Container(
+      width: double.infinity,
+      alignment: Alignment.center,
       child: Stack(
         clipBehavior: Clip.none,
+        alignment: AlignmentDirectional.topEnd,
         children: [
           // text card
           Container(
+            margin: const EdgeInsets.only(top: 10),
             padding: const EdgeInsetsDirectional.only(
               top: 20,
               bottom: 20,
@@ -37,9 +41,8 @@ class RoundStartsWithCard extends StatelessWidget {
           ),
 
           // playing card
-          const PositionedDirectional(
-            top: -10,
-            end: 28,
+          const Padding(
+            padding: EdgeInsetsDirectional.only(end: 28),
             child: PlayingCard(
               suit: PlayingCardSuit.hearts,
               value: PlayingCardValue.seven,
