@@ -5,6 +5,7 @@ import 'package:score_game/Core/theme/colors.dart';
 import 'package:score_game/Core/utils/enums.dart';
 import 'package:score_game/Features/trix_game/presentation/controller/trix_cubit.dart/trix_cubit.dart';
 import 'package:score_game/Features/trix_game/presentation/controller/trix_cubit.dart/trix_state.dart';
+import 'package:score_game/Features/trix_game/presentation/widgets/game_choose_widgets/dabalat_dialog.dart';
 
 class TrixComplexToggle extends StatelessWidget {
   const TrixComplexToggle({super.key});
@@ -30,9 +31,17 @@ class TrixComplexToggle extends StatelessWidget {
               ),
               Expanded(
                 child: _ButtonItem(
-                  onPressed: () =>
-                      cubit.toggleTrixAndComplex(TrixGameType.complex),
-                  btnText: 'تريكس',
+                  onPressed: () {
+                    // change game type to complex
+                    cubit.toggleTrixAndComplex(TrixGameType.complex);
+
+                    // display the dabalat popup
+                    showDialog(
+                      context: context,
+                      builder: (context) => const DabalatDialog(),
+                    );
+                  },
+                  btnText: 'كومبليكس',
                   isSelected: state == TrixGameType.complex,
                 ),
               ),
