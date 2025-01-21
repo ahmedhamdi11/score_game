@@ -17,9 +17,12 @@ class SinglePlayersDabalatItem extends StatelessWidget {
       child: Row(
         children: [
           // card
-          const PlayingCard(
-            suit: PlayingCardSuit.hearts,
-            value: PlayingCardValue.jack,
+          const Padding(
+            padding: EdgeInsets.only(bottom: 16),
+            child: PlayingCard(
+              suit: PlayingCardSuit.hearts,
+              value: PlayingCardValue.jack,
+            ),
           ),
 
           const SizedBox(width: 12),
