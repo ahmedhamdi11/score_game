@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:score_game/Core/theme/app_text_styles.dart';
 import 'package:score_game/Core/theme/colors.dart';
-import 'package:score_game/Core/utils/app_assets.dart';
+import 'package:score_game/Core/utils/enums.dart';
 import 'package:score_game/Core/widgets/playing_card.dart';
 
 class RoundStartsWithCard extends StatelessWidget {
@@ -41,9 +41,8 @@ class RoundStartsWithCard extends StatelessWidget {
             top: -10,
             end: 28,
             child: PlayingCard(
-              cardNumber: '7',
-              svgIconPath: AppAssets.iconsPlayingCardHeart,
-              cardColor: AppColors.red_300,
+              suit: PlayingCardSuit.hearts,
+              value: PlayingCardValue.seven,
             ),
           ),
         ],

@@ -6,7 +6,13 @@ class AppAssets {
 
   static const String iconsMenu = "assets/icons/menu.svg";
 
-  static const String iconsPlayingCardHeart = "assets/icons/playing_card_heart.svg";
+  static const String iconsPlayingCardClubs = "assets/icons/playing_card_clubs.svg";
+
+  static const String iconsPlayingCardDiamonds = "assets/icons/playing_card_diamonds.svg";
+
+  static const String iconsPlayingCardHearts = "assets/icons/playing_card_hearts.svg";
+
+  static const String iconsPlayingCardSpades = "assets/icons/playing_card_spades.svg";
 
   static const String imagesBackground = "assets/images/background.png";
 
